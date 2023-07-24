@@ -8,7 +8,7 @@ let interval,
 let stateRows,
   stateColumns,
   r = 1,
-  c = 0,
+  c = 1,
   rd = 0,
   cd = 1;
 const tails = [];
@@ -35,6 +35,7 @@ document.querySelector(".inputSpeed").addEventListener("change", function () {
 });
 
 document.addEventListener("keydown", (e) => {
+  start();
   e.preventDefault();
   makeDirection(e.keyCode);
 });

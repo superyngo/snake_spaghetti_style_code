@@ -36,41 +36,45 @@
 
     <main>
       <section class="controls">
-        <button class="start" onclick="start()">start</button>
-        <button class="stop" onclick="stop()">stop</button>
-        <button class="restart" onclick="reset()">reset</button>
-        <input
-          type="range"
-          min="1"
-          max="100"
-          placeholder="rows"
-          class="inputRows"
-          style="width: 50px"
-          value="20"
-        />
-        <span>rows:</span>
-        <span class="inputRowsValue">20</span>
-        <input
-          type="range"
-          min="1"
-          max="100"
-          placeholder="columns"
-          class="inputColumns"
-          style="width: 50px"
-          value="15"
-        />
-        <span>columns:</span>
-        <span class="inputColumnsValue">15</span>
-        <input
-          type="range"
-          min="1"
-          max="10"
-          class="inputSpeed"
-          style="width: 25px"
-          value="5"
-        />
-        <span>speed:</span>
-        <span class="inputSpeedValue">5</span>
+        <div class="basicControl">
+          <button class="start" onclick="start()">start</button>
+          <button class="stop" onclick="stop()">stop</button>
+          <button class="restart" onclick="reset()">reset</button>
+        </div>
+        <div class="parameter" style="margin-top: 0.5rem">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            placeholder="rows"
+            class="inputRows"
+            style="width: 100px"
+            value="20"
+          />
+          <span>rows:</span>
+          <span class="inputRowsValue">20</span>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            placeholder="columns"
+            class="inputColumns"
+            style="width: 100px"
+            value="15"
+          />
+          <span>columns:</span>
+          <span class="inputColumnsValue">15</span>
+          <input
+            type="range"
+            min="1"
+            max="10"
+            class="inputSpeed"
+            style="width: 100px"
+            value="5"
+          />
+          <span>speed:</span>
+          <span class="inputSpeedValue">5</span>
+        </div>
       </section>
       <section id="canvas"></section>
     </main>
