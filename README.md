@@ -1,6 +1,6 @@
 A vanilla-javascript Snake
 
-Just happened to fell like making a snake game last night,
+Just happened to feel like making a snake game last night,
 so here it is:
 
 - no framework
