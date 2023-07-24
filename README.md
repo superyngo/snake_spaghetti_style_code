@@ -11,3 +11,5 @@ so here it is:
 - touch screen supported
 
 Will try to remake one using svelte and TypeScript
+
+Demo:[Demo](https://superyngo.github.io/snake_spaghetti_style_code/)
