@@ -18,20 +18,28 @@ const inputSpeedValue = document.querySelector(".inputSpeedValue");
 
 document.querySelector(".inputRows").addEventListener("change", function () {
   inputRowsValue.textContent = this.value;
+  reset();
+  start();
 });
 
 document.querySelector(".inputColumns").addEventListener("change", function () {
   inputColumnsValue.textContent = this.value;
+  reset();
+  start();
 });
 
 document.querySelector(".inputSpeed").addEventListener("change", function () {
   inputSpeedValue.textContent = this.value;
+  stop();
+  start();
 });
 
 document.addEventListener("keydown", (e) => {
   e.preventDefault();
   makeDirection(e.keyCode);
 });
+
+createCanvas("#canvas");
 
 function createCanvas(divID) {
   const rows = +document.querySelector(".inputRows").value;
@@ -66,7 +74,7 @@ function createCanvas(divID) {
       makeDirection(dx > 0 ? 39 : 37);
     } else if (Math.abs(dy) > threshold) {
       // Vertical movement
-      makeDirection(0, dy > 0 ? 38 : 40);
+      makeDirection(dy > 0 ? 38 : 40);
     }
   });
 
