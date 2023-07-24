@@ -56,6 +56,7 @@ function createCanvas(divID) {
     const touch = event.touches[0];
     touchStartX = touch.clientX;
     touchStartY = touch.clientY;
+    start();
   });
 
   canvas.addEventListener("touchmove", function (event) {
