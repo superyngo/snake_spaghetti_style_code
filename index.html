@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({"gtm.start": new Date().getTime(), event: "gtm.js"});
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-N8M5XR8");
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N8M5XR8"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <main>
+      <section class="controls">
+        <button class="start" onclick="start()">start</button>
+        <button class="stop" onclick="stop()">stop</button>
+        <button class="restart" onclick="reset()">reset</button>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          placeholder="rows"
+          class="inputRows"
+          style="width: 75px"
+          value="5"
+        />
+        <span>rows:</span>
+        <span class="inputRowsValue">5</span>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          placeholder="columns"
+          class="inputColumns"
+          style="width: 75px"
+          value="5"
+        />
+        <span>columns:</span>
+        <span class="inputColumnsValue">5</span>
+        <input
+          type="range"
+          min="1"
+          max="10"
+          class="inputSpeed"
+          style="width: 75px"
+          value="1"
+        />
+        <span>speed:</span>
+        <span class="inputSpeedValue">1</span>
+      </section>
+      <section id="canvas"></section>
+    </main>
+  </body>
+</html>
+<script></script>
+
+<style></style>
