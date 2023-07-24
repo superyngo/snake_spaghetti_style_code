@@ -75,7 +75,7 @@ function createCanvas(divID) {
       makeDirection(dx > 0 ? 39 : 37);
     } else if (Math.abs(dy) > threshold) {
       // Vertical movement
-      makeDirection(dy > 0 ? 38 : 40);
+      makeDirection(dy > 0 ? 40 : 38);
     }
   });
 
@@ -160,18 +160,22 @@ function dropBait() {
 function makeDirection(keyCode) {
   switch (keyCode) {
     case 37:
+      if (length > 1 && cd === 1) break;
       cd = -1;
       rd = 0;
       break;
     case 38:
+      if (length > 1 && rd === 1) break;
       cd = 0;
       rd = -1;
       break;
     case 39:
+      if (length > 1 && cd === -1) break;
       cd = 1;
       rd = 0;
       break;
     case 40:
+      if (length > 1 && rd === -1) break;
       cd = 0;
       rd = 1;
       break;

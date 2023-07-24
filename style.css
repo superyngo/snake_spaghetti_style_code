@@ -4,6 +4,7 @@
   --bait-background-color: red;
   --controls-height: 5rem;
   --grid-columns: 0;
+  --inputRangeWidth: 75px;
 }
 
 * {
@@ -39,4 +40,7 @@
 }
 .bait {
   background: var(--bait-background-color);
+}
+.inputRange {
+  width: var(--inputRangeWidth);
 }
