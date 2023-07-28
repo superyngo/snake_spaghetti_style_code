@@ -1,4 +1,5 @@
 const root = document.documentElement;
+const canvasID = "#canvas";
 
 let interval,
   coordinate = "0101",
@@ -40,12 +41,11 @@ document.addEventListener("keydown", (e) => {
   makeDirection(e.keyCode);
 });
 
-createCanvas("#canvas");
-
+createCanvas(canvasID);
 function createCanvas(divID) {
   const rows = +document.querySelector(".inputRows").value;
   const columns = +document.querySelector(".inputColumns").value;
-  const canvas = document.querySelector("#canvas");
+  const canvas = document.querySelector(divID);
   let x = 0,
     y = 0,
     touchStartX,
@@ -107,6 +107,17 @@ function createCanvas(divID) {
     }
     canvas.append(row);
   }
+  function resize() {
+    const canvasHeight = getComputedStyle(canvas).height.replace("px", "");
+    const canvasWidth = getComputedStyle(canvas).width.replace("px", "");
+    const height = Math.min(canvasHeight / rows, canvasWidth / columns);
+    console.log(height);
+    document.documentElement.style.setProperty("--rc-height", height + "px");
+    console.log(document.documentElement);
+  }
+  resize();
+  window.onresize = resize;
+
   dropBait();
 }
 
@@ -180,18 +191,19 @@ function makeDirection(keyCode) {
       cd = 0;
       rd = 1;
       break;
+    default:
+      break;
   }
 }
 function start() {
   if (interval) return;
   if (!document.querySelector("#canvas")?.children.length) {
-    createCanvas("#canvas");
+    createCanvas(canvasID);
   }
   interval = setInterval(
     move,
     1000 / +document.querySelector(".inputSpeed").value
   );
-  console.log(inputSpeedValue);
 }
 function stop() {
   clearInterval(interval);
@@ -207,7 +219,7 @@ function reset() {
     (length = 1),
     (tails.length = 0),
     (bait = null);
-  createCanvas("#canvas");
+  createCanvas(canvasID);
 
   // start();
 }
